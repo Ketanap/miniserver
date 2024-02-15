@@ -13,7 +13,7 @@ const auth = require('json-server-auth')
 
 // Comment out to allow write operations
 const router = jsonServer.router('db.json')
-
+server.db = router.db
 const middlewares = jsonServer.defaults()
 const rules = auth.rewriter({
     // Permission rules
