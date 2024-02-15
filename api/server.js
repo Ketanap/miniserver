@@ -22,9 +22,9 @@ const rules = auth.rewriter({
 })
   
   // You must apply the middlewares in the following order
-  app.use(rules)
+server.use(rules)
 //server.use(middlewares)
-app.use(auth)
+server.use(auth)
 // Add this before server.use(router)
 /*server.use(jsonServer.rewriter({
     '/api/*': '/$1',
