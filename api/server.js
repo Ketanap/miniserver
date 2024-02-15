@@ -17,8 +17,7 @@ const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
 const rules = auth.rewriter({
     // Permission rules
-    users: 600,
-    posts: 640,
+    posts: 660,
     // Other rules
 })
   
