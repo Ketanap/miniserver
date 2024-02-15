@@ -5,6 +5,12 @@
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$rEQ5pcTCx5c6GZ23Iu6A8ObHFax9/n771GFTR3l/cU81ywlvBUoUW",
+      "id": 1
+    }
+  ]
  
 }
