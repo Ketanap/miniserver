@@ -1,16 +1,28 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "users": [
     {
       "email": "olivier@mail.com",
       "password": "$2a$10$rEQ5pcTCx5c6GZ23Iu6A8ObHFax9/n771GFTR3l/cU81ywlvBUoUW",
       "id": 1
+    },
+    {
+      "email": "kinjalgirig@gmail.com",
+      "password": "$2a$10$.mQoPAyplSSYq4G3ttAhFeIoo57DsNk/RLXcJSLl8cEZgb4BL1TfC",
+      "id": 2
     }
   ]
- 
 }
