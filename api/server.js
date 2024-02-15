@@ -2,7 +2,7 @@
 const jsonServer = require('json-server')
 
 const server = jsonServer.create()
-
+const auth = require('json-server-auth')
 // Uncomment to allow write operations
 // const fs = require('fs')
 // const path = require('path')
@@ -15,13 +15,23 @@ const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 
 const middlewares = jsonServer.defaults()
-
-server.use(middlewares)
+const rules = auth.rewriter({
+    // Permission rules
+    users: 600,
+    posts: 640,
+    // Other rules
+})
+  
+  // You must apply the middlewares in the following order
+  app.use(rules)
+//server.use(middlewares)
+app.use(auth)
 // Add this before server.use(router)
-server.use(jsonServer.rewriter({
+/*server.use(jsonServer.rewriter({
     '/api/*': '/$1',
     '/blog/:resource/:id/show': '/:resource/:id'
-}))
+}))*/
+
 server.use(router)
 server.listen(3000, () => {
     console.log('JSON Server is running')
