@@ -25,7 +25,24 @@ const rules = auth.rewriter({
   // You must apply the middlewares in the following order
 server.use(rules)
 //server.use(middlewares)
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'authorization');
+    res.header('Access-Control-Request-Headers', 'authorization');
+    res.header('Access-Control-Allow-Methods', 'GET');
+    res.header('Access-Control-Request-Methods', 'GET');
+    if (req.path == '/api/auth/login') {
+      next();
+    } else {
+      if (isAuthorized(req)) { // add your authorization logic here
+        next() // continue to JSON Server router
+      } else {
+        res.sendStatus(401)
+      }
+    }
+  })
 server.use(auth)
+
 // Add this before server.use(router)
 /*server.use(jsonServer.rewriter({
     '/api/*': '/$1',
