@@ -35,15 +35,15 @@ server.use((req, res, next) => {
       'Access-Control-Allow-Headers',
       'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
     )
-    if (req.path == '/api/auth/login') {
-      next();
-    } else {
-      if (isAuthorized(req)) { // add your authorization logic here
-        next() // continue to JSON Server router
-      } else {
-        res.sendStatus(401)
-      }
-    }
+    // if (req.path == '/api/auth/login') {
+    //   next();
+    // } else {
+    //   if (isAuthorized(req)) { // add your authorization logic here
+    //     next() // continue to JSON Server router
+    //   } else {
+    //     res.sendStatus(401)
+    //   }
+    // }
   })
 server.use(auth)
 
